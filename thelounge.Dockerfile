@@ -35,5 +35,6 @@ RUN npm cache clean --force
 ENV THELOUNGE_HOME "/var/opt/thelounge"
 VOLUME /var/opt/thelounge
 EXPOSE 9000
-ENTRYPOINT ["/bin/bash","-c","echo 'password\n' | thelounge add $USER; thelounge start"]
+
+ENTRYPOINT ["/bin/bash","-c","mkdir -p /var/opt/thelounge/users/; echo '{ \"password\": \"\",\"log\": false }'>/var/opt/thelounge/users/$USER.json; echo password | thelounge reset $USER ; thelounge start;"]
 
