@@ -36,5 +36,5 @@ ENV THELOUNGE_HOME "/var/opt/thelounge"
 VOLUME /var/opt/thelounge
 EXPOSE 9000
 
-ENTRYPOINT ["/usr/bin/thelounge","-c","public=true","start"]
+ENTRYPOINT ["/usr/local/bin/thelounge","-c","public=true","start"]
 
